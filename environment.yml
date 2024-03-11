@@ -1,4 +1,4 @@
-name: covanalyzer
+name: covanalyser
 channels:
   - conda-forge
   - bioconda
