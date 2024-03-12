@@ -115,14 +115,14 @@ for j in range(1, num):
     result['Spike_coverage'] = [nCount]
     result['Spike mutations'] = [sp]
     # Declare list of unique mutations for genetic lines
-    list_omXBB15 = ['F486P']
-    list_omXBB = ['Y144del','V83A', 'H146Q','Q183E', 'V213E', 'G252V', 'L368I', 'V445P','F490S']
-    list_om_2_75_2 = ['D1199N']
-    list_om_2_75 = ['K147E', 'W152R', 'F157L', 'I210V', 'G257S']
-    list_omBQ1 = ['K444T']
-    list_omBF7 = ['R346T']
-    list_om_5 = ['F486V']
-    list_om_2 = ['X666X'] # no unique mutations
+    list_jn1 = ['L455S']
+    list_eg5 = ['Q52H', 'F456L']
+    list_omXBB23 = ['D253G', 'P521S']
+    list_omXBB16 = ['E180V', 'T478R']
+    list_om_2_75 = ['G257S', 'I210V']
+    list_om_2 = ['G339D', 'Q493R']
+    list_omXBB = ['X666X']
+    list_286 = ['X666X']    
     kolvo = []
     # Check presense of mutatinos for each line
     for k in range(0, (len(result.columns) - 4)):
@@ -137,29 +137,29 @@ for j in range(1, num):
             result.iloc[0][k + 4] = str(len(same_values)) + "/" + str(len(muts[k])) + " " + "{:.0%}".format(
                 (len(same_values) / len(muts[k])))
         # Make a conclusion about the line based on the unique mutations of the lines found
-        if any(t in x for x in my_list for t in list_omXBB15):
-            result['Conclusion'].iloc[0] = "Omicron(XBB.1.5)"
+        if any(t in x for x in my_list for t in list_jn1):
+            result['Conclusion'].iloc[0] = "JN.1"
             
-        elif any(t in x for x in my_list for t in list_omXBB):
-            result['Conclusion'].iloc[0] = "Omicron(XBB)"  
+        elif any(t in x for x in my_list for t in list_eg5):
+            result['Conclusion'].iloc[0] = "EG.5"
             
-        elif any(t in x for x in my_list for t in list_om_2_75_2):
-            result['Conclusion'].iloc[0] = "Omicron(BA.2.75.2)"
+        elif any(t in x for x in my_list for t in list_omXBB23):
+            result['Conclusion'].iloc[0] = "XBB.2.3"
+            
+        elif any(t in x for x in my_list for t in list_omXBB16):
+            result['Conclusion'].iloc[0] = "XBB.1.6"
             
         elif any(t in x for x in my_list for t in list_om_2_75):
-            result['Conclusion'].iloc[0] = "Omicron(BA.2.75)"
-            
-        elif any(t in x for x in my_list for t in list_omBQ1):
-                result['Conclusion'].iloc[0] = "Omicron(BQ.1)" 
+                result['Conclusion'].iloc[0] = "BA.2.75" 
                 
-        elif any(t in x for x in my_list for t in list_omBF7):
-            result['Conclusion'].iloc[0] = "Omicron(BF.7)"
-            
-        elif any(t in x for x in my_list for t in list_om_5):
-            result['Conclusion'].iloc[0] = "Omicron(BA.4/BA.5)"             
-            
         elif any(t in x for x in my_list for t in list_om_2):
-            result['Conclusion'].iloc[0] = "Omicron(BA.2)"            
+            result['Conclusion'].iloc[0] = "BA.2"
+            
+        elif any(t in x for x in my_list for t in list_omXBB):
+            result['Conclusion'].iloc[0] = "XBB)"             
+            
+        elif any(t in x for x in my_list for t in list_286):
+            result['Conclusion'].iloc[0] = "BA.2.86)"            
                 
         else:
             result['Conclusion'] = "undefined"
