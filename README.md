@@ -1,18 +1,23 @@
-﻿# CovAnalyser: SARS-CoV-2 genotyping program
+# CovAnalyser: SARS-CoV-2 genotyping program
 
 ## Introduction
 
 CovAnalyser is a software tool to find mutations in SARS-CoV-2 Spike genes and determine genetic lineages of isolates.
 
+## How does this work?
+
+![Samples](https://github.com/artiman16/covanalyser/assets/65973229/f3f3f6f5-bff3-47d1-81d1-bef272c4afc5)
+
 ## Installation (Linux)
 ```
 git clone https://github.com/artiman16/covanalyser.git
+cd covanalyser
 conda env create -f environment.yml
-conda activate covanalyser
 ```
 ## Launching
-Collect you samples in .fasta format in Samples dir and push in parent directory the command:
+Collect you samples with .fasta format in Samples dir and push in parent directory the following commands:
 ```
+conda activate covanalyser
 bash CovAnalyser.sh
 ```
 
@@ -29,4 +34,6 @@ Submit problems or requests to the [Issue Tracker](https://github.com/artiman16/
 
 ## Citation
 
+Герасименко А. А., Водопьянов А. С., Писанов Р. В. Типирование штаммов SARS-COV-2 с помощью новой компьютерной программы «CovAnalyzer» // Сборник статей XXXVII международной научно-практической конференции «Российская наука в современном мире». М. – 2021. – С. 19-22.
+ 
 # Licence
