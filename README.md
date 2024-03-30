@@ -6,7 +6,7 @@ CovAnalyser is a software tool to find mutations in SARS-CoV-2 Spike genes and d
 
 ## How does this work?
 
-![Samples](https://github.com/artiman16/covanalyser/assets/65973229/f3f3f6f5-bff3-47d1-81d1-bef272c4afc5)
+![Samples2](https://github.com/artiman16/covanalyser/assets/65973229/0d71ec8e-f0bc-489e-88c4-5f8f16237137)
 
 ## Installation (Linux)
 ```
